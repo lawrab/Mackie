@@ -5,7 +5,14 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnailRacing.Mackie", "SnailRacing.Mackie\SnailRacing.Mackie.csproj", "{6EDA8522-FAE4-4664-9FEB-5B48A0057C09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnailRacing.Mackie.Tests", "SnailRacing.Mackie.Tests\SnailRacing.Mackie.Tests.csproj", "{BD6286BF-3EF4-49D8-BD32-DE344447E214}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnailRacing.Mackie.Tests", "SnailRacing.Mackie.Tests\SnailRacing.Mackie.Tests.csproj", "{BD6286BF-3EF4-49D8-BD32-DE344447E214}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C96A2574-B41D-44A4-B050-C992B0C56112}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

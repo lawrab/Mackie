@@ -1,8 +1,8 @@
 ﻿using DSharpPlus;
-using Microsoft.Extensions.Configuration;
-using SnailRacing.Mackie.Models;
 using DSharpPlus.SlashCommands;
+using Microsoft.Extensions.Configuration;
 using SnailRacing.Mackie.Discord;
+using SnailRacing.Mackie.Models;
 
 namespace SnailRacing.Mackie.Infrastructure
 {
@@ -47,7 +47,7 @@ namespace SnailRacing.Mackie.Infrastructure
 
         private static DiscordClient CreateDiscordClient(AppConfig config)
         {
-            var discord = new DiscordClient( new DiscordConfiguration
+            var discord = new DiscordClient(new DiscordConfiguration
             {
                 Token = config?.Discord?.Token ?? throw new Exception("No Discord Token in config"),
                 TokenType = TokenType.Bot
