@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnailRacing.Mackie", "SnailRacing.Mackie\SnailRacing.Mackie.csproj", "{6EDA8522-FAE4-4664-9FEB-5B48A0057C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnailRacing.Mackie", "SnailRacing.Mackie\SnailRacing.Mackie.csproj", "{6EDA8522-FAE4-4664-9FEB-5B48A0057C09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnailRacing.Mackie.Tests", "SnailRacing.Mackie.Tests\SnailRacing.Mackie.Tests.csproj", "{BD6286BF-3EF4-49D8-BD32-DE344447E214}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6EDA8522-FAE4-4664-9FEB-5B48A0057C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EDA8522-FAE4-4664-9FEB-5B48A0057C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EDA8522-FAE4-4664-9FEB-5B48A0057C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6286BF-3EF4-49D8-BD32-DE344447E214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6286BF-3EF4-49D8-BD32-DE344447E214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6286BF-3EF4-49D8-BD32-DE344447E214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6286BF-3EF4-49D8-BD32-DE344447E214}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
