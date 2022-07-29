@@ -7,8 +7,13 @@ namespace SnailRacing.Mackie
     {
         static void Main(string[] args)
         {
-            StartUp.Init();
-            Console.WriteLine("Hello, World!");
+            MainAsync().GetAwaiter().GetResult();
+        }
+
+        static async Task MainAsync()
+        {
+            await StartUp.Init();
+            await Task.Delay(-1);
         }
     }
 }
