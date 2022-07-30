@@ -1,6 +1,7 @@
 ﻿using DSharpPlus;
 using DSharpPlus.SlashCommands;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using SnailRacing.Mackie.Discord;
 using SnailRacing.Mackie.Models;
 
@@ -15,14 +16,19 @@ namespace SnailRacing.Mackie.Infrastructure
             var config = SetupConfig();
             config.Bind(AppConfig);
             var discord = CreateDiscordClient(AppConfig);
-            RegisterDiscordCommands(discord);
+            var services = ServiceInstaller.ConfigureServices(AppConfig);
+
+            RegisterDiscordCommands(discord, services);
 
             await discord.ConnectAsync();
         }
 
-        private static void RegisterDiscordCommands(DiscordClient discord)
+        private static void RegisterDiscordCommands(DiscordClient discord, ServiceProvider services)
         {
-            var slash = discord.UseSlashCommands();
+            var slash = discord.UseSlashCommands( new SlashCommandsConfiguration
+            {
+                Services = services
+            });
 
             //To register them for a single server, recommended for testing
             slash.RegisterCommands<SlashCommands>(935530784297738332);
@@ -50,7 +56,8 @@ namespace SnailRacing.Mackie.Infrastructure
             var discord = new DiscordClient(new DiscordConfiguration
             {
                 Token = config?.Discord?.Token ?? throw new Exception("No Discord Token in config"),
-                TokenType = TokenType.Bot
+                TokenType = TokenType.Bot,
+                AutoReconnect = true,
             });
 
             return discord;
