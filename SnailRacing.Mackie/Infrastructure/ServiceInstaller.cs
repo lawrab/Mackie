@@ -18,18 +18,11 @@ namespace SnailRacing.Mackie.Infrastructure
                 .AddSingleton(appConfig)
                 .AddValidatorsFromAssembly(typeof(ServiceInstaller).Assembly)
                 .AddMediatR(typeof(TeamCreateHandler).Assembly)
-                .AddDbContext<TeamDbContext>(c => c.UseSqlite($"Data Source={GetDbPath()}"))
+                .AddScoped<TeamDbContext>()
                 .AddScoped<ITeamRepository, TeamRepository>()
                 .BuildServiceProvider();
 
             return serviceProvider; 
-        }
-
-        private static string GetDbPath()
-        {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            return Path.Join(path, "mackie.db");
         }
     }
 }

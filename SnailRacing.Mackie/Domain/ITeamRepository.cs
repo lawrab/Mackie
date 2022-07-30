@@ -2,5 +2,7 @@
 {
     internal interface ITeamRepository
     {
+        void Add(Team team);
+        Task Commit();
     }
 }

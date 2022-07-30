@@ -31,7 +31,7 @@ namespace SnailRacing.Mackie.Infrastructure
             });
 
             //To register them for a single server, recommended for testing
-            slash.RegisterCommands<SlashCommands>(935530784297738332);
+            slash.RegisterCommands<TeamCommands>(935530784297738332);
 
             //To register them globally, once you're confident that they're ready to be used by everyone
             //slash.RegisterCommands<SlashCommands>();
