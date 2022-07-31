@@ -16,7 +16,7 @@ namespace SnailRacing.Mackie.Infrastructure
             var config = SetupConfig();
             config.Bind(AppConfig);
             var discord = CreateDiscordClient(AppConfig);
-            var services = ServiceInstaller.ConfigureServices(AppConfig);
+            var services = ServiceInstaller.ConfigureServices(AppConfig, discord);
 
             RegisterDiscordCommands(discord, services);
 

@@ -1,6 +1,6 @@
-﻿using FluentValidation;
+﻿using DSharpPlus;
+using FluentValidation;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using SnailRacing.Mackie.Domain;
@@ -11,7 +11,7 @@ namespace SnailRacing.Mackie.Infrastructure
 {
     internal static class ServiceInstaller
     {
-        public static ServiceProvider ConfigureServices(AppConfig appConfig)
+        public static ServiceProvider ConfigureServices(AppConfig appConfig, DiscordClient discord)
         {
             var serviceProvider = new ServiceCollection()
                 .AddLogging(l => l.AddSerilog())
@@ -20,9 +20,11 @@ namespace SnailRacing.Mackie.Infrastructure
                 .AddMediatR(typeof(TeamCreateHandler).Assembly)
                 .AddScoped<TeamDbContext>()
                 .AddScoped<ITeamRepository, TeamRepository>()
+                .AddSingleton(discord)
+                .AddTransient<IDiscordRepository, DiscordRepository>()
                 .BuildServiceProvider();
 
-            return serviceProvider; 
+            return serviceProvider;
         }
     }
 }
