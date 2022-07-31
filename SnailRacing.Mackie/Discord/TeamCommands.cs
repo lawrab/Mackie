@@ -24,7 +24,10 @@ namespace SnailRacing.Mackie.Discord
         {
             var response = await _mediator.Send(new TeamCreateRequest
             {
-                Name = name
+                GuildId = ctx.Guild.Id.ToString(),
+                Name = name,
+                Username = ctx.User.Username,
+                When = DateTime.Now
             });
 
             var msg = new DiscordInteractionResponseBuilder()

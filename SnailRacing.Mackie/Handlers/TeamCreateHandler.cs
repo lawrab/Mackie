@@ -13,7 +13,10 @@ namespace SnailRacing.Mackie.Handlers
         {
             _repository.Add(new Team
             {
+                GuildId = request.GuildId,
                 Name = request.Name,
+                CreatedOn = request.When,
+                CreatedBy = request.Username
             });
             await _repository.Commit();
             return new TeamCreateResponse();
