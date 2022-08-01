@@ -2,7 +2,8 @@
 
 namespace SnailRacing.Mackie.Infrastructure
 {
-    internal class GenericRepository<TEntity> where TEntity : class, IRepository<TEntity>
+    internal class GenericRepository<TEntity> : IRepository<TEntity> 
+        where TEntity : class
     {
         private readonly AppDbContext _context;
 
@@ -17,15 +18,20 @@ namespace SnailRacing.Mackie.Infrastructure
             return await _context.FindAsync<TEntity>(id);
         }
 
-        public Task SaveAsync()
-        {
-            return _context.SaveChangesAsync();
-        }
-
         public void Update(TEntity entity)
         {
             _context.Attach(entity);
             _context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        }
+
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
+        public IEnumerable<TEntity> FindAsync(Func<TEntity, bool> predicate)
+        {
+            return _context.Set<TEntity>().AsQueryable().Where(predicate).ToList();
         }
     }
 }

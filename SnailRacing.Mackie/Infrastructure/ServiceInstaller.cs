@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using SnailRacing.Mackie.Domain;
-using SnailRacing.Mackie.Handlers;
+using SnailRacing.Mackie.Handlers.TeamHandlers;
 using SnailRacing.Mackie.Models;
 
 namespace SnailRacing.Mackie.Infrastructure

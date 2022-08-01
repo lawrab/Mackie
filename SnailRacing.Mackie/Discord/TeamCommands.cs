@@ -3,7 +3,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.SlashCommands;
 using MediatR;
 using SnailRacing.Mackie.Domain;
-using SnailRacing.Mackie.Handlers;
+using SnailRacing.Mackie.Handlers.TeamHandlers;
 
 namespace SnailRacing.Mackie.Discord
 {

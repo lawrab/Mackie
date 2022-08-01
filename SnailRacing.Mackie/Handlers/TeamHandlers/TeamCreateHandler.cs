@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using SnailRacing.Mackie.Domain;
 
-namespace SnailRacing.Mackie.Handlers
+namespace SnailRacing.Mackie.Handlers.TeamHandlers
 {
     internal class TeamCreateHandler : IRequestHandler<TeamCreateRequest, TeamCreateResponse>
     {

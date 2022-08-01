@@ -1,4 +1,4 @@
-﻿namespace SnailRacing.Mackie.Handlers
+﻿namespace SnailRacing.Mackie.Handlers.TeamHandlers
 {
     internal class TeamCreateResponse
     {
