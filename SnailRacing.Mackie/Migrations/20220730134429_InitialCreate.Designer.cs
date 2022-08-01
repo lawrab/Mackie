@@ -10,7 +10,7 @@ using SnailRacing.Mackie.Domain;
 
 namespace SnailRacing.Mackie.Migrations
 {
-    [DbContext(typeof(TeamDbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20220730134429_InitialCreate")]
     partial class InitialCreate
     {

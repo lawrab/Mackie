@@ -18,7 +18,7 @@ namespace SnailRacing.Mackie.Infrastructure
                 .AddSingleton(appConfig)
                 .AddValidatorsFromAssembly(typeof(ServiceInstaller).Assembly)
                 .AddMediatR(typeof(TeamCreateHandler).Assembly)
-                .AddScoped<TeamDbContext>()
+                .AddScoped<AppDbContext>()
                 .AddScoped<ITeamRepository, TeamRepository>()
                 .AddSingleton(discord)
                 .AddTransient<IDiscordRepository, DiscordRepository>()

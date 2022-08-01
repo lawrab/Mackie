@@ -11,13 +11,44 @@ using SnailRacing.Mackie.Domain;
 namespace SnailRacing.Mackie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220731114428_ExtendingTeams")]
-    partial class ExtendingTeams
+    [Migration("20220801144648_AddingGuildConfiguration")]
+    partial class AddingGuildConfiguration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.7");
+
+            modelBuilder.Entity("SnailRacing.Mackie.Domain.Configuration", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("GuildId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TeamsTextParentChannelId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TeamsTextParentChannelName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TeamsVoiceParentChannelId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TeamsVoiceParentChannelName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Configuration");
+                });
 
             modelBuilder.Entity("SnailRacing.Mackie.Domain.Team", b =>
                 {

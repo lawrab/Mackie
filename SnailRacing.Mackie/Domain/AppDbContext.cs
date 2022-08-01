@@ -2,8 +2,9 @@
 
 namespace SnailRacing.Mackie.Domain
 {
-    internal class TeamDbContext : DbContext
+    internal class AppDbContext : DbContext
     {
+        public DbSet<Configuration>? Configuration { get; set; }
         public DbSet<Team>? Teams { get; set; }
         public DbSet<TeamMember>? TeamMembers { get; set; }
 
